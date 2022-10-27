@@ -1,3 +1,13 @@
+# Frontend for Zirpuns
+
+This app uses typescript and is created using create-react-app.
+
+# Development
+
+- Edit .env to match the ip to zirpuns-backend
+- Run `npm i`
+- Run `npm run start`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
