@@ -1,4 +1,4 @@
 export type QuoteResponse = {
-    id: string;
+    id: number;
     quote: string;
 }

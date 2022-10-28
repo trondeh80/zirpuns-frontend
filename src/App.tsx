@@ -7,7 +7,7 @@ function App() {
   const [quote, setQuote] = useState<string>("");
 
   useEffect(() => {
-    get(createUrl("/random"))
+    get(createUrl("/1"))
       .then(({ quote }: QuoteResponse) => setQuote(quote))
       .catch(() => setQuote("INSERT DAD JOKE"));
   }, []);
