@@ -1,27 +1,16 @@
-import React, { useEffect, useState } from "react";
-import get, { createUrl } from "./util/http";
-import { QuoteResponse } from "./util/types";
+import React from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./App.css";
+import PunContainer from "./components/PunContainer";
+
+const queryClient = new QueryClient();
 
 function App() {
-  const [quote, setQuote] = useState<string>("");
-
-  useEffect(() => {
-    get(createUrl("/1"))
-      .then(({ quote }: QuoteResponse) => setQuote(quote))
-      .catch(() => setQuote("INSERT DAD JOKE"));
-  }, []);
-
-  if (!quote) {
-    return null;
-  }
-
   return (
     <div className="App">
-      <div className="quoteContainer">
-        <div className="quote">{quote}</div>
-        <div className="zirpinsLogo">- Philipp</div>
-      </div>
+      <QueryClientProvider client={queryClient}>
+        <PunContainer />
+      </QueryClientProvider>
     </div>
   );
 }
