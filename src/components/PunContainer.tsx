@@ -6,12 +6,13 @@ import { REACT_QUERY_REPO_NAME } from "../util/constants";
 
 import "./PunContainer.css";
 
-const getFirstPun = (): Promise<QuoteResponse> => get(createUrl("/1"));
+const getRandomPun = (): Promise<QuoteResponse> =>
+  get(createUrl("/puns/random"));
 
 export default function PunContainer() {
   const { isLoading, error, data } = useQuery(
     [REACT_QUERY_REPO_NAME],
-    getFirstPun
+    getRandomPun
   );
   if (isLoading) return <>Loading...</>;
   if (error) {
