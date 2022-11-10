@@ -21,8 +21,12 @@ export default function PunContainer() {
 
   return (
     <div className="punContainer">
-      <div className="pun">{data?.quote}</div>
-      <div className="zirpinsLogo">- Philipp</div>
+      <h1>ZirPuns</h1>
+      <div className="pun">
+        <p>What do NASA programmers do on the weekends?</p>
+        <p>They hit the space bar.</p>
+      </div> 
+      <p className="author">-Andre</p>
     </div>
   );
 }
