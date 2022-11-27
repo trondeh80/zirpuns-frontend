@@ -19,14 +19,20 @@ export default function PunContainer() {
     return <>Could not communicate with the API</>;
   }
 
+  if (!data) {
+    return null;
+  }
+  console.log("data", data);
+  const { quote, quotePun, author } = data;
+
   return (
     <div className="punContainer">
       <h1>ZirPuns</h1>
       <div className="pun">
-        <p>What do NASA programmers do on the weekends?</p>
-        <p>They hit the space bar.</p>
-      </div> 
-      <p className="author">-Andre</p>
+        <p>{quote}</p>
+        <p>{quotePun ?? ""}</p>
+      </div>
+      <p className="author">- {author ?? "Anonym"}</p>
     </div>
   );
 }
